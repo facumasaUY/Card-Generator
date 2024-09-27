@@ -25,10 +25,19 @@ let cardValues = [
 
 let cardPintas = ["♦", "♥", "♠", "♣"];
 
-function elegirRandom() {
-  return cardValues[Math.floor(Math.random() * cardValues.length)];
+function elegirRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
-const valorAleatorio = elegirRandom();
-
+const valorAleatorio = elegirRandom(cardValues);
 document.querySelector(".value").innerHTML = valorAleatorio;
+
+const pintaAleatoria = elegirRandom(cardPintas);
+document.querySelectorAll(".pinta").forEach(elementoPinta => {
+  elementoPinta.innerHTML = pintaAleatoria;
+  if (pintaAleatoria === "♥" || pintaAleatoria === "♦") {
+    elementoPinta.style.color = "red";
+  } else {
+    elementoPinta.style.color = "black";
+  }
+});
