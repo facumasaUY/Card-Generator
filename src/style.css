@@ -6,3 +6,7 @@
 .value {
   font-size: 100px;
 }
+
+button {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
+}
